@@ -1,0 +1,117 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    font-family: Arial, sans-serif;
+    color: white;
+    background:
+        radial-gradient(circle at top, rgba(167, 243, 208, 0.35), transparent 45%),
+        linear-gradient(135deg, #064e3b, #14532d 55%, #166534);
+}
+
+.info {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    font-size: 18px;
+}
+
+.mode {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+select {
+    padding: 7px 12px;
+    border: none;
+    border-radius: 16px;
+    font: inherit;
+    font-size: 15px;
+    font-weight: bold;
+    color: #052e16;
+    background: #bbf7d0;
+    cursor: pointer;
+}
+
+button {
+    padding: 8px 18px;
+    border: none;
+    border-radius: 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #052e16;
+    background: #bbf7d0;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #dcfce7;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(4, 100px);
+    gap: 12px;
+    perspective: 1000px;
+}
+
+.card {
+    height: 100px;
+    position: relative;
+    cursor: pointer;
+    transform-style: preserve-3d;
+    transition: transform 0.5s, filter 0.25s;
+}
+
+.card:hover:not(.flipped):not(.matched) {
+    filter: drop-shadow(0 0 14px rgba(187, 247, 208, 0.95));
+    transform: translateY(-8px) scale(1.07);
+}
+
+.card.flipped {
+    transform: rotateY(180deg);
+}
+
+.back,
+.front {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 14px;
+    font-size: 48px;
+    backface-visibility: hidden;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
+}
+
+.back {
+    background: linear-gradient(135deg, #6ee7b7, #15803d);
+}
+
+.front {
+    color: #14532d;
+    background: #f0fdf4;
+    transform: rotateY(180deg);
+}
+
+.card.matched .front {
+    background: #86efac;
+}
+
+.win {
+    height: 30px;
+    font-size: 22px;
+    font-weight: bold;
+    color: #bbf7d0;
+}

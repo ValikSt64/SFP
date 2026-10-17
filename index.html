@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Знайди пару</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Знайди пару</h1>
+
+  <div class="info">
+    <span>Ходи: <b id="moves">0</b></span>
+    <span>Пари: <b id="pairs">0</b> / 8</span>
+    <label class="mode">
+      Режим:
+      <select id="sound-mode">
+        <option value="mellstroy">Мелстроя</option>
+        <option value="normal">Обычный</option>
+      </select>
+    </label>
+    <button id="restart">Нова гра</button>
+  </div>
+
+  <div class="board" id="board"></div>
+
+  <p class="win" id="win"></p>
+
+  <script src="script.js"></script>
+</body>
+</html>
